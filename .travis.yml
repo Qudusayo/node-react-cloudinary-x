@@ -1,3 +1,4 @@
+# Default language config
 language: node_js
 node_js: [ 8.11.1 ]
 
@@ -11,15 +12,26 @@ jobs:
       language: node_js
       node_js: [ 12.4.0 ]
       script: npm run lint
-    - name: Deployment
-      stage: Deploy to Stagging
+    - name: Deploy to staging
+      stage: Deployment
+      if: branch = master
       install: skip
-      script: npm run deploy
+      script: "echo 'Working on this'"
+      # deploy: 
+      #   provider: heroku
+      #   api_key:
+      #     secure: ...
+      #   app: nrc-x-stagging
+    - name: Deploy to dev
+      stage: Deployment
+      install: skip
+      script: "echo 'This would be implemented soon'"
+      # I'm thinking of using the branch name to auto create an heroku app and deploy the branch code there
+    
 
 # Specify the order of the stages
 stages:
   - Testing/Static Analysis
-  - name: Deploy to stagging
-    if: branch = master
+  - Deployment
 
 
