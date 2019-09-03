@@ -1,3 +1,25 @@
 language: node_js
-node_js:
-  - 8.11.1
+node_js: [ 8.11.1 ]
+
+jobs:
+  include:
+    - name: Unit Tests
+      stage: Testing/Static Analysis
+      script: npm run test:v1 # coverage reporting can also happen here
+    - name: Linting
+      stage: Testing/Static Analysis
+      language: node_js
+      node_js: [ 12.4.0 ]
+      script: npm run lint
+    - name: Deployment
+      stage: Deploy to Stagging
+      install: skip
+      script: npm run deploy
+
+# Specify the order of the stages
+stages:
+  - Testing/Static Analysis
+  - name: Deploy to stagging
+    if: branch = master
+
+

@@ -31,7 +31,10 @@
     "start": "npm run webpack && babel-node ./server/server.js",
     "server:dev": "npm run webpack && nodemon ./server/server.js --exec babel-node --watch server",
     "client:dev": "webpack-dev-server --content-base src --inline --hot",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "test:v1": "echo \"No test written for version V1 but all is well\"",
+    "lint": "echo 'No linting setup available, but hopefule all is well...'",
+    "deploy": "echo 'Deployment not setup, but hopefully would be done soon'",
   },
   "repository": {
     "type": "git",
