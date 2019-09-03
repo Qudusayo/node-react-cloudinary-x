@@ -34,7 +34,7 @@
     "webpack": "webpack",
     "test:v1": "echo \"No test written for version V1 but all is well\"",
     "lint": "echo 'No linting setup available, but hopefule all is well...'",
-    "deploy": "echo 'Deployment not setup, but hopefully would be done soon'",
+    "deploy": "echo 'Deployment not setup, but hopefully would be done soon'"
   },
   "repository": {
     "type": "git",
